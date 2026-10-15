@@ -127,6 +127,7 @@
     <type fullname="UIContents.Minimap.UIMinimapIconView" preserve="all" />
     <type fullname="UIContents.Missions.UIPopupMissions" preserve="all" />
     <type fullname="UIContents.Model3D.UI3DModel" preserve="all" />
+    <type fullname="UIContents.Model3D.UIModelCameraFullScale" preserve="all" />
     <type fullname="UIContents.Notice.UIPopupNotice" preserve="all" />
     <type fullname="UIContents.Particle.UIParticleSorter" preserve="all" />
     <type fullname="UIContents.Pass.UIPopupPassLevel" preserve="all" />
@@ -209,6 +210,7 @@
     <type fullname="UIContents.Tutorial.Move.UITutorialMove" preserve="all" />
     <type fullname="UIContents.Tutorial.Touch.UITutorialTouch" preserve="all" />
     <type fullname="UIContents.TutorialTouch.UITutorialObject" preserve="all" />
+    <type fullname="UIContents.UILandscapeLayout" preserve="all" />
     <type fullname="UIContents.UITap" preserve="all" />
     <type fullname="UIContents.UITapGroup" preserve="all" />
     <type fullname="UIContents.Unlock.UIPopupUnlockContents" preserve="all" />
