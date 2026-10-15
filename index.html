@@ -148,6 +148,17 @@
       new ResizeObserver(fitCanvasAspect).observe(fullscreenContainer);
 
 
+      // GitHub Pages 는 모든 파일에 10분 캐시를 건다. 번들 목록(catalog·settings.json)은 이름이 고정이라 다시 배포하면
+      // 캐시에 남은 이전 목록이 지워진 번들을 가리켜 404 로 멈춘다(Ctrl+F5 도 게임이 직접 부르는 요청은 캐시를 탄다).
+      // 목록만 매번 서버에 확인한다 - 그대로면 304 로 끝나 비용이 거의 없다. 엔진의 웹 요청은 fetch 로 나간다.
+      var nativeFetch = window.fetch;
+      window.fetch = function (input, init) {
+        var url = "string" === typeof input ? input : input.url;
+        if (/\/StreamingAssets\/aa\/(catalog\.[a-z]+|settings\.json)(\?|$)/.test(url))
+          init = Object.assign({}, init, { cache: "no-cache" });
+        return nativeFetch.call(this, input, init);
+      };
+
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
